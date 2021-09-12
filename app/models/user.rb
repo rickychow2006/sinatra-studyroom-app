@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base 
     has_secure_password
 
-    has_many :study_posts 
+    has_many :studyposts 
 
 
 
