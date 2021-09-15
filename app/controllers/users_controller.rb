@@ -23,7 +23,6 @@ class UserController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
     
-
     end 
 
     get '/users/:id' do

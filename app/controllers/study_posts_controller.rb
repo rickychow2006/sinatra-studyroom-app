@@ -10,7 +10,12 @@ class StudyPostsController < ApplicationController
 
     post '/studyposts' do 
         if !logged_in?
-            redirect '/'
+            redirect '/studyposts'
         end 
     end 
+
+    get '/studyposts/:id' do
+        erb :'study_posts/show' 
+    end 
+
 end 
