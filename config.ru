@@ -6,6 +6,8 @@ end
 
 use Rack::MethodOverride
 
+use StudyPostsController
+
 use UserController
 
 #here where to mount other controllers with 'use'
