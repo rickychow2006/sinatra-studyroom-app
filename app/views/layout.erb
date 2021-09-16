@@ -7,18 +7,37 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
-    <title>SinatraStudyroomApp</title>
+    <title>Study Room App</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css"/>
   </head>
+  <STYLE>A {text-decoration: none;} </STYLE>
+
   <body>
+    <header>
+    <a href = "/" class="logo">Study Room</a>
+    <nav>
     <div class ="nav">
-      <a href = "/logout">Logout</a>
-      <a href = "/studyposts">All Study Posts</a>
-      <a href = "/studyposts/new">New Entry </a>
+      <!<% if logged_in? %> >
+      <ul class = "logged-in-nav"> 
+      <li></li><a href = "/logout">Logout</a></li>
+      <li><a href = "/study_posts">All Study Posts</a></li>
+      <li><a href = "/study_posts/new">New Entry </a></li>
+      </ul>
+
+      <% else %>
+      <ul class="logged-out-nav">
+      <li><a href="/login">Log In</a></li>
+      <li><a href = "/signup">Sign Up</a></li>
+      </ul>
+       <% end%>
+       </nav>
     </div>
+    </nav>
+        </header>
+
     <div class="wrapper">
 
         <%= yield %>

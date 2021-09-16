@@ -5,7 +5,7 @@ class CreateStudyPosts < ActiveRecord::Migration
       t.integer :user_id
       t.string :date 
       t.string :description
-      t.integer :study_time
+      t.string :study_time
 
       t.timestamps null: false
     end

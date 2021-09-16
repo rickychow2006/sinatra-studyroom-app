@@ -1,0 +1,5 @@
+<h2>All Study Posts </h2>
+<% @study_posts.each do |study_post| %>
+<h4><a href="/study_posts/<%= study_post.id %>"> <%= study_post.created_at %></a></h4>
+<p><%= study_post.description%> </p>
+<% end%>
