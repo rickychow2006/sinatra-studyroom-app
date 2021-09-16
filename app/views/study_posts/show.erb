@@ -2,4 +2,14 @@
 <p>Date: <%= @study_post.date %></p>
 <p>Study Time: <%= @study_post.study_time %></p>
 
-<p>Created by: <%= @study_post.user_id</p>
+<p>Created by: <%= @study_post.user_id %> </p >
+
+<%  if authorized_to_edit?(@study_post) %>
+    <a href="/study_posts/<%= @study_post.id%>/edit"> Edit Post </a>
+    <br><br>
+    <form class="" action="/study_posts/<%= @study_post.id%>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="" value="Delete this Post">
+    </form>
+<% end %>
+

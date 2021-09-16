@@ -1,0 +1,12 @@
+Edit Page for a Study Post
+
+<form class = "" action = "/study_posts/<%= @study_post.id%>" method = "post">
+    <input type="hidden" name = "_method" value = "patch">
+    <label for="description">Description:</label>
+    <input type="text" name="description" value ="<%= @study_post.description %>">
+    <label for="date">Date:</label>
+    <input type="text" name="date" value ="<%= @study_post.date %>">
+    <label for="study_time">Study Time:</label>
+    <input type="text" name="study_time" value ="<%= @study_post.study_time %>">
+    <input type="submit" name="" value="Edit Post">
+</form>

@@ -25,8 +25,8 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id])
     end
 
-    def authorized_to_edit?(studyposts)
-      studypost.user == current_user
+    def authorized_to_edit?(studypost)
+      @study_post.user == current_user
     end 
     
     def redirect_if_not_logged_in
@@ -43,5 +43,4 @@ class ApplicationController < Sinatra::Base
     end 
     
   end 
-
 end
