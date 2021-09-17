@@ -41,6 +41,14 @@ class ApplicationController < Sinatra::Base
         redirect "/users/#{current_user.id}"
       end 
     end 
-    
+
+    def partial(template, locals = {})
+    slim template, :layout => false, :locals => locals
+    end
+
+  #the flash helper
+   def flash
+    @flash = session.delete(:flash)
+    end
   end 
 end

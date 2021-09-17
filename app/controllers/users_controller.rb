@@ -1,19 +1,18 @@
 class UserController < ApplicationController
     
-    get '/login' do
+    get '/' do
         redirect_if_logged_in
-        erb :login
+        erb :welcome
     end
 
-    post '/login'  do
+    post '/'  do
         @user = User.find_by(email: params[:email])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
-            flash[:message] = 'Welcome, #{@user.name}!'
             redirect "users/#{@user.id}"
         else 
-            falsh[:errors] = 'Sorry the credentials you are using are invalid. Please update your credentials and try again.'
-            redirect '/login'
+            flash[:errors] = "Your credentials were invalid.  Please sign up or try again."
+            redirect '/'
         end 
     end
 
@@ -26,7 +25,7 @@ class UserController < ApplicationController
         @user = User.create(params)
         if @user.save 
             session[:user_id] = @user.id
-            flash[:message] = 'You have successfuly created an account! Welcome, #{@user.name} to the Study Room Community!'
+            flash[:message] = "You have successfuly created an account! Welcome, #{@user.name} to the Study Room Community!"
             redirect "/users/#{@user.id}"
         else
             flash[:errors] = "Account creation failure: #{@user.errors.full_messages.to_sentence}"

@@ -1,4 +1,4 @@
-Edit Page for a Study Post
+<h2>Edit Page For a Study Post</h2>
 
 <form class = "" action = "/study_posts/<%= @study_post.id%>" method = "post">
     <input type="hidden" name = "_method" value = "patch">
@@ -8,5 +8,6 @@ Edit Page for a Study Post
     <input type="text" name="date" value ="<%= @study_post.date %>">
     <label for="study_time">Study Time:</label>
     <input type="text" name="study_time" value ="<%= @study_post.study_time %>">
-    <input type="submit" name="" value="Edit Post">
+    <br>
+    <input type="submit" name="" value="Edit Post" class=" btn btn-full">
 </form>

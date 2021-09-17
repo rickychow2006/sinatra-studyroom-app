@@ -1,3 +1,26 @@
-<h1>Welcome to Study Room App!</h1>
+<h2>Welcome to Study Room App!</h2>
 
-<a href="/login">Log In</a> OR <a href = "/signup">Sign Up</a>
+<main>
+    <form class="session" action="/" method="post">
+        <div>
+        <label for ="email"> Email: </label> 
+        <input type="email" name="email" placeholder ="Type your email" /> 
+        </div>
+
+        <div>
+        <label for ="password"> Password: </label> 
+        <input type="password" name="password" placeholder ="Type your password" class ="input1"/>
+        </div>
+
+        <div>
+            <br>
+            <input type="submit" value="Log in" class=" btn btn-full"> <br>
+        </div> 
+
+        <div>
+        <br>
+        <h5> Not a user yet? </h5>
+        <a href = "/signup">Create an account</a>
+        </div> 
+    </form>
+  

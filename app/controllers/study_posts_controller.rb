@@ -11,13 +11,14 @@ class StudyPostsController < ApplicationController
 
     post '/study_posts' do 
         
-        if params[:description] != "" || params[:study_time] != "" || params[:date]
+        if params[:description] != "" && params[:study_time] != "" && params[:date] != ""
              @study_post = StudyPost.create(description: params[:description], u_name: current_user.name, user_id: current_user.id, date: params[:date], study_time: params[:study_time])
             redirect "/study_posts/#{@study_post.id}"
           else
-            flash[:errors] = "Something went wrong - you must provide content for your entry."
+            flash[:errors] = "Something went wrong - you must provide Description, Study Time and Date."
             redirect '/study_posts/new'
           end
+        binding.pry
     end 
 
     get '/study_posts/:id' do

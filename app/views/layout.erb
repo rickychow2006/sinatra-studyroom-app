@@ -22,23 +22,24 @@
     <div class ="nav">
       <!<% if logged_in? %> >
       <ul class = "logged-in-nav"> 
-      <li></li><a href = "/logout">Logout</a></li>
+      <li></li><a href = "/logout">Log out</a></li>
       <li><a href = "/study_posts">All Study Posts</a></li>
       <li><a href = "/study_posts/new">New Entry </a></li>
       </ul>
-
-      <% else %>
-      <ul class="logged-out-nav">
-      <li><a href="/login">Log In</a></li>
-      <li><a href = "/signup">Sign Up</a></li>
-      </ul>
-       <% end%>
+         <% end%>
        </nav>
     </div>
     </nav>
         </header>
 
     <div class="wrapper">
+
+      <% if flash[:message] %>
+      <h4><%= flash[:message] %></h4>
+      <% end %>
+      <% if flash[:errors] %>
+      <h4 style="color: red;"><%= flash[:errors] %></h4>
+      <% end %>
 
         <%= yield %>
 
